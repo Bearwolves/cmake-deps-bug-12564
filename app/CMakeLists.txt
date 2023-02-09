@@ -12,6 +12,7 @@ message(STATUS "MAIN - main_inc_dirs_libs ${main_inc_dirs_libs}")
 
 target_include_directories(${PROJECT_NAME} PUBLIC
     conan-libs::conan-libs
+    ${conan-libs_INCLUDE_DIRS_RELEASE}
 )
 
 get_property(main_inc_dirs_hello TARGET ${PROJECT_NAME} PROPERTY INTERFACE_INCLUDE_DIRECTORIES)
@@ -24,6 +25,7 @@ message(STATUS "MAIN - main_lib_dirs_libs ${main_lib_dirs_libs}")
 
 target_link_directories(${PROJECT_NAME} PUBLIC
     conan-libs::conan-libs
+    ${conan-libs_LIB_DIRS_RELEASE}
 )
 
 get_property(main_lib_dirs_hello TARGET ${PROJECT_NAME} PROPERTY INTERFACE_LINK_DIRECTORIES)
