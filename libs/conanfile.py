@@ -28,4 +28,6 @@ class ConanLibs(ConanFile):
         cmake.install()
 
     def package_info(self):
+        self.cpp_info.includedirs = ["include"]
         self.cpp_info.libdirs = ["lib"]
+        self.cpp_info.set_property("cmake_set_interface_link_directories", "yes")
